@@ -42,14 +42,14 @@ Salvar a pasta do Kafka na mesma pasta do projeto
 
 **2-	Configurar variáveis de ambiente, conforme abaixo:**
 <p align="center">
-  <img src= "imagens/variavamb.png"width=70% >
+  <img src= "imagens/variavamb.png"width=50% >
 </p>
 
 <p align="center">
-  <img src= "imagens/variavamb2.png"width=70% >
+  <img src= "imagens/variavamb2.png"width=50% >
 </p>
 
-**3-	Abra o prompt de comando, navegue até a pasta do Kafka e execute o comando abaixo para ***inicializar o Zookeeper (gerenciador de cluster do Kafka)*****
+**3-	Abra o prompt de comando, navegue até a pasta do Kafka e execute o comando abaixo para _inicializar o Zookeeper (gerenciador de cluster do Kafka)_**
 
 
 
