@@ -21,4 +21,37 @@ Para coletar dados dos sensores IoT (Internet of Things), vamos seguir as seguin
 
 **1-	Abrir o terminal ou prompt de comando e acessar a pasta com o simulador.**
 
-2-	Execute o comando abaixo para gerar um arquivo com 10.000 leituras de sensores IoT (pode gerar quantos registros você desejar).
+**2-	Execute o comando abaixo para gerar um arquivo com 10.000 leituras de sensores IoT (pode gerar quantos registros você desejar).**
+
+> python simulador.py 1000 > ../dados/dados_sensores.txt
+<p align="center">
+  <img src= "imagens/comando1.png"width=70% >
+</p>
+
+# Instalação do Apache Kafka
+
+A seguir demonstramos os comandos necessários para instalação e execução do Kafka no Windows:
+
+**1-	Acesse a página do Kafka e faça download da versão abaixo:**
+
+https://kafka.apache.org/
+<p align="center">
+  <img src= "imagens/instkafka.png"width=70% >
+</p>
+Salvar a pasta do Kafka na mesma pasta do projeto
+
+**2-	Configurar variáveis de ambiente, conforme abaixo:**
+<p align="center">
+  <img src= "imagens/variavamb.png"width=70% >
+</p>
+
+<p align="center">
+  <img src= "imagens/variavamb2.png"width=70% >
+</p>
+
+**3-	Abra o prompt de comando, navegue até a pasta do Kafka e execute o comando abaixo para ***inicializar o Zookeeper (gerenciador de cluster do Kafka)*****
+
+
+
+
+
