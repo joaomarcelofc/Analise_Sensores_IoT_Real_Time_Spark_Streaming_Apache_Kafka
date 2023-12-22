@@ -19,9 +19,9 @@ Este projeto é composto de diversas partes uma vez que toda a infraestrutura ne
 
 Para coletar dados dos sensores IoT (Internet of Things), vamos seguir as seguintes etapas:
 
-**1-	Abrir o terminal ou prompt de comando e acessar a pasta com o simulador.**
+1-	Abrir o terminal ou prompt de comando e acessar a pasta com o simulador.
 
-**2-	Execute o comando abaixo para gerar um arquivo com 10.000 leituras de sensores IoT (pode gerar quantos registros você desejar).**
+2-	Execute o comando abaixo para gerar um arquivo com 10.000 leituras de sensores IoT (pode gerar quantos registros você desejar).
 
 > python simulador.py 1000 > ../dados/dados_sensores.txt
 <p align="center">
@@ -32,7 +32,7 @@ Para coletar dados dos sensores IoT (Internet of Things), vamos seguir as seguin
 
 A seguir demonstramos os comandos necessários para instalação e execução do Kafka no Windows:
 
-**1-	Acesse a página do Kafka e faça download da versão abaixo:**
+1-	Acesse a página do Kafka e faça download da versão abaixo:
 
 https://kafka.apache.org/
 <p align="center">
@@ -40,7 +40,7 @@ https://kafka.apache.org/
 </p>
 Salvar a pasta do Kafka na mesma pasta do projeto
 
-**2-	Configurar variáveis de ambiente, conforme abaixo:**
+2-	Configurar variáveis de ambiente, conforme abaixo:
 <p align="center">
   <img src= "imagens/variavamb.png"width=50% >
 </p>
@@ -49,9 +49,40 @@ Salvar a pasta do Kafka na mesma pasta do projeto
   <img src= "imagens/variavamb2.png"width=50% >
 </p>
 
-**3-	Abra o prompt de comando, navegue até a pasta do Kafka e execute o comando abaixo para _inicializar o Zookeeper (gerenciador de cluster do Kafka)_**
+3-	Abra o prompt de comando, navegue até a pasta do Kafka e execute o comando abaixo para **inicializar o Zookeeper (gerenciador de cluster do Kafka)**
+> zookeeper-server-start.bat ../../config/zookeeper.properties
+<p align="center">
+  <img src= "imagens/comando2.png"width=70% >
+</p>
 
+4-	Abra outro prompt de comando, navegue até a pasta do Kafka e execute o comando abaixo:
+> kafka-server-start.bat ../../config/server.properties
+<p align="center">
+  <img src= "imagens/comando3.png"width=70% >
+</p>
 
+5-	Abra outro prompt de comando, navegue até a pasta do Kafka e execute o comando abaixo para **criar um tópico no Kafka:**
+> kafka-topics.bat --create --topic dsamp6 --bootstrap-server localhost:9092
+<p align="center">
+  <img src= "imagens/comando4.png"width=70% >
+</p>
 
+6-	No mesmo prompt anterior, execute o comando abaixo para **descrever o tópico:**
+> kafka-topics.bat --describe --topic dsamp6 --bootstrap-server localhost:9092
+<p align="center">
+  <img src= "imagens/comando5.png"width=70% >
+</p>
+
+7-	No mesmo prompt de comando anterior execute o comando abaixo para **produzir o streaming de dados no Kafka (como um produtor de streaming):**
+> kafka-console-producer.bat --bootstrap-server localhost:9092 --topic dsamp6 < /JoaoMarcelo/FCD/BigDataRealTimePythonSpark/Cap15/12-Mini-Projeto6/dados/dados_sensores.txt
+<p align="center">
+  <img src= "imagens/comando6.png"width=70% >
+</p>
+
+8-	No mesmo prompt de comando anterior execute o comando abaixo para **listar o conteúdo do tópico (como um consumidor de streaming):**
+> kafka-console-consumer.bat --topic dsamp6 --from-beginning --bootstrap-server localhost:9092
+<p align="center">
+  <img src= "imagens/comando7.png"width=70% >
+</p>
 
 
